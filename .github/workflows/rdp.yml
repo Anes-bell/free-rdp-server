@@ -5,7 +5,7 @@ on: [push]
 jobs:
   rdp-setup:
     runs-on: windows-latest
-    timeout-minutes: 360  # 6 hour max (GitHub Free limit)
+    timeout-minutes: 99999  # 6 hour max (GitHub Free limit)
 
     steps:
     - name: Download and extract Ngrok
@@ -75,7 +75,7 @@ jobs:
         Write-Output "=========================================="
 
         # Keep alive
-        while ($true) { Start-Sleep -Seconds 300 }
+        while ($true) { Start-Sleep -Seconds 99999 }
 
     - name: Force cleanup
       if: always()
